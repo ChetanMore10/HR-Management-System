@@ -22,20 +22,28 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@Valid @RequestBody RegisterRequest request) {
+    public ResponseEntity<String> register(
+            @Valid @RequestBody RegisterRequest request) {
 
-        return ResponseEntity.ok(authService.register(request));
+        return ResponseEntity.ok(
+                authService.register(request)
+        );
     }
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
+    public ResponseEntity<LoginResponse> login(
+            @Valid @RequestBody LoginRequest request) {
 
-        return ResponseEntity.ok(authService.login(request));
+        return ResponseEntity.ok(
+                authService.login(request)
+        );
     }
 
     @PostMapping("/logout")
     public ResponseEntity<String> logout() {
 
-        return ResponseEntity.ok(authService.logout());
+        return ResponseEntity.ok(
+                authService.logout()
+        );
     }
 }

@@ -1,6 +1,8 @@
+/*
 package com.hrms.security;
 
 import com.hrms.repository.UserRepository;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -47,6 +49,7 @@ public class SecurityConfig {
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
+
         return configuration.getAuthenticationManager();
     }
 
@@ -61,11 +64,11 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(auth -> auth
 
-                        .requestMatchers("/api/auth/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        .requestMatchers("/api/auth/**", "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
 
                         .requestMatchers("/api/hr/**").hasRole("HR")
 
-                        .requestMatchers("/api/employee/**").hasAnyRole("HR", "EMPLOYEE")
+                        .requestMatchers("/api/employees/**").hasAnyRole("HR", "EMPLOYEE")
 
                         .anyRequest().authenticated())
 
@@ -73,4 +76,4 @@ public class SecurityConfig {
 
         return http.build();
     }
-}
+}*/

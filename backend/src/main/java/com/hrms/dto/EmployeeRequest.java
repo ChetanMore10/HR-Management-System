@@ -1,17 +1,18 @@
 package com.hrms.dto;
 
-import com.hrms.entity.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RegisterRequest {
+public class EmployeeRequest {
 
     @NotBlank
     private String name;
@@ -21,9 +22,14 @@ public class RegisterRequest {
     private String email;
 
     @NotBlank
-    private String password;
+    private String phoneNumber;
+
+    @NotBlank
+    private String department;
+
+    @NotBlank
+    private String designation;
 
     @NotNull
-    private Role role;
-
+    private LocalDate dateOfJoining;
 }

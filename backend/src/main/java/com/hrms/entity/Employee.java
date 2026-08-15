@@ -3,14 +3,16 @@ package com.hrms.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity
-@Table(name = "users")
+@Table(name = "employees")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,9 +25,14 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    private String password;
+    private String phoneNumber;
 
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role;
+    private String department;
+
+    @Column(nullable = false)
+    private String designation;
+
+    @Column(nullable = false)
+    private LocalDate dateOfJoining;
 }
